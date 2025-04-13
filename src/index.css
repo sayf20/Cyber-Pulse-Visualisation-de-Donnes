@@ -1,0 +1,221 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light mode - Enhanced contrast */
+    --background: 210 40% 98%;
+    --foreground: 222 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 84% 4.9%;
+
+    --primary: 262 83.3% 57.8%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217.2 91.2% 59.8%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 40% 86.1%;  /* Lighter to see countries better */
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 160 84% 39%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 262 83.3% 57.8%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark mode - Enhanced colors for better contrast */
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 14%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 262 83.3% 67.8%; /* Brighter primary */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217.2 91.2% 69.8%; /* Brighter secondary */
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 42.6% 27.5%; /* Darker but more visible */
+    --muted-foreground: 215 20.2% 75.1%; /* Brighter text */
+
+    --accent: 160 94% 49%; /* Brighter accent */
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 94.2% 70.2%; /* Brighter destructive */
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 27.5%; /* More visible border */
+    --input: 217.2 32.6% 27.5%;
+    --ring: 262 83.3% 67.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .container-cyber {
+    @apply w-full max-w-[1600px] mx-auto px-4;
+  }
+
+  .card-cyber {
+    @apply bg-card border border-border rounded-lg shadow-md overflow-hidden;
+  }
+
+  .svg-container {
+    @apply w-full h-full overflow-hidden;
+  }
+
+  .cyber-tooltip {
+    @apply absolute z-50 px-3 py-2 text-sm bg-card border border-accent rounded shadow-lg transition-all duration-300 ease-in-out;
+  }
+
+  .map-path {
+    @apply transition-colors duration-300;
+  }
+
+  .attack-line {
+    @apply fill-none transition-all duration-300 ease-in-out;
+  }
+
+  .attack-point {
+    @apply fill-current transition-all duration-200 ease-in-out;
+  }
+  
+  /* Larger chart containers */
+  .chart-container {
+    @apply min-h-[600px] w-full; /* Increased height from 500px to 600px */
+  }
+
+  /* Gradient text effect for titles */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
+  }
+}
+
+/* Enhanced animations with improved performance */
+@keyframes pulse-glow {
+  0% {
+    opacity: 0.6;
+    transform: scale(0.8);
+    filter: blur(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: blur(1px);
+  }
+  100% {
+    opacity: 0.6;
+    transform: scale(0.8);
+    filter: blur(0);
+  }
+}
+
+@keyframes trace-attack {
+  0% {
+    stroke-dashoffset: 100;
+    opacity: 0;
+    stroke-width: 1.5;
+  }
+  10% {
+    opacity: 0.9;
+    stroke-width: 2;
+  }
+  90% {
+    opacity: 0.9;
+    stroke-width: 2;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+    stroke-width: 1.5;
+  }
+}
+
+/* Performance optimized animations */
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+  will-change: opacity, transform, filter;
+}
+
+.animate-trace-attack {
+  animation: trace-attack 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  will-change: stroke-dashoffset, opacity, stroke-width;
+}
+
+/* Improved chart transition effects with hardware acceleration */
+.recharts-layer {
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  will-change: opacity, transform;
+}
+
+.recharts-wrapper {
+  transition: all 0.3s ease-out;
+  will-change: transform, opacity;
+}
+
+.recharts-surface {
+  transition: all 0.3s ease;
+}
+
+/* Enhanced chart hover effects with reduced motion */
+.recharts-sector:hover,
+.recharts-rectangle:hover {
+  transition: transform 0.2s ease;
+  transform: scale(1.02);
+}
+
+/* Zoom button styles */
+.zoom-controls {
+  @apply absolute top-2 right-2 flex flex-col gap-1;
+}
+
+.zoom-button {
+  @apply bg-background/80 backdrop-blur p-1 rounded border border-border 
+         text-foreground hover:bg-accent/20 transition-colors cursor-pointer;
+}
+
+@layer utilities {
+  .stroke-dasharray-4 {
+    stroke-dasharray: 4;
+  }
+}
+
+/* Crosshair styles for charts */
+.crosshair {
+  pointer-events: none;
+  transition: opacity 0.1s ease;
+}
+
+.indicator {
+  pointer-events: none;
+  transition: opacity 0.1s ease;
+  fill: var(--foreground);
+}
