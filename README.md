@@ -18,6 +18,13 @@
 
 This project visualizes cyber attack data on a world map, showing attack origins, destinations, types, and frequencies. The interactive dashboard provides multiple visualization methods including a real-time attack map, time series data, and various charts to analyze attack patterns.
 
+## Deployment
+
+This project is deployed on Vercel for live access and demonstration. You can explore the interactive CyberPulse dashboard via the link below:
+
+👉 Live Demo: https://cyber-pulse-visualisation-de-donnes.vercel.app/
+
+
 ## Data Source
 
 The data used in this project represents cyber attack information including:
