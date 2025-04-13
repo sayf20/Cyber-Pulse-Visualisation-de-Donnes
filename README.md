@@ -6,13 +6,13 @@
 **Project Title:** CyberPulse World Map - Cyber Attack Visualization Dashboard
 
 **Team Members:**
-- [Your Name] - [your.email@example.com]
-- [Team Member Name] - [team.member.email@example.com]
+- [Saifeddine MOSRATI] - [mosratisayf20@gmail.com]
+- [Carla VALLET / Vincent OGER] 
 
 **Declaration Date:** 21/03/2024
 **Submission Date:** 20/04/2024
 
-**GitHub Repository:** [https://github.com/yourusername/cyberpulse-attack-map](https://github.com/yourusername/cyberpulse-attack-map)
+**GitHub Repository:** [https://github.com/sayf20/Cyber-Pulse-Visualisation-de-Donnes.git](https://github.com/sayf20/Cyber-Pulse-Visualisation-de-Donnes.git)
 
 ## Project Description
 
@@ -45,10 +45,10 @@ This project is built exclusively with:
 
 ```sh
 # Clone the repository
-git clone https://github.com/yourusername/cyberpulse-attack-map.git
+git clone https://github.com/sayf20/Cyber-Pulse-Visualisation-de-Donnes.git
 
 # Navigate to the project directory
-cd cyberpulse-attack-map
+cd Cyber-Pulse-Visualisation-de-Donnes
 
 # Install dependencies
 npm install
