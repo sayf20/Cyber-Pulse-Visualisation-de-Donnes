@@ -16,6 +16,5 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
-  },
-  base: mode === 'production' ? '/Cyber-Pulse-Visualisation-de-Donnes/' : '/'
+  }
 }));
